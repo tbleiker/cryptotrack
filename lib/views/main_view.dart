@@ -122,7 +122,7 @@ class _MainView extends State<MainView> {
     });
   }
 
-  Future<bool> _showMyDialog(BuildContext context) async {
+  Future<bool> _askForAbortion(BuildContext context) async {
     return await showDialog(
       context: context,
       barrierDismissible: false,
@@ -144,7 +144,7 @@ class _MainView extends State<MainView> {
 
   Future<void> _onItemTap(int index) async {
     if (_allowNav == false) {
-      if (await _showMyDialog(context) == false) {
+      if (await _askForAbortion(context) == false) {
         return;
       }
     }
