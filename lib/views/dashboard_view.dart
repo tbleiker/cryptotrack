@@ -1,4 +1,8 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:cryptotrack/internal/extensions.dart';
 
 class DashboardView extends StatefulWidget {
   const DashboardView({Key? key}) : super(key: key);
@@ -12,9 +16,9 @@ class _DashboardView extends State<DashboardView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Dashboard'),
+        title: Text(context.l10n.dashboard_title),
       ),
-      body: const Center(child: Text('1')),
+      body: const Center(child: Text('...')),
     );
   }
 }
