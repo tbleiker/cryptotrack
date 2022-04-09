@@ -18,16 +18,16 @@ class TransactionsListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Radius top = isFirst ? const Radius.circular(20) : const Radius.circular(2);
+    Radius top = isFirst ? const Radius.circular(5) : const Radius.circular(5);
     Radius bottom =
-        isLast ? const Radius.circular(20) : const Radius.circular(2);
+        isLast ? const Radius.circular(5) : const Radius.circular(5);
 
     return Card(
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: top, bottom: bottom),
       ),
-      margin: const EdgeInsets.symmetric(vertical: 2),
+      margin: const EdgeInsets.symmetric(vertical: 3),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Text(transaction.name),

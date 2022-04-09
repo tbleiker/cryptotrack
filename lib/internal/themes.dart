@@ -102,7 +102,7 @@ abstract class Themes {
         filled: true,
         fillColor: scheme.surface,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(5),
           borderSide: const BorderSide(width: 0, style: BorderStyle.none),
         ),
       ),

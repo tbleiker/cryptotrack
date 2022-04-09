@@ -1,5 +1,5 @@
 // Flutter imports:
-import 'package:cryptotrack/internal/entity_currencie.dart';
+import 'package:cryptotrack/internal/entity_currency.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:

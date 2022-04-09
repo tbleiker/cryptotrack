@@ -55,13 +55,14 @@ class _WalletEditView extends State<WalletEditView> {
       ),
 
       // body
-      child: Form(
-        key: _formKey,
-        child: Padding(
-          padding: const EdgeInsets.only(
-            left: Themes.paddingMainLeft,
-            right: Themes.paddingMainRight,
-          ),
+      child: Padding(
+        padding: const EdgeInsets.only(
+          top: Themes.paddingMainTop,
+          left: Themes.paddingMainLeft,
+          right: Themes.paddingMainRight,
+        ),
+        child: Form(
+          key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -71,17 +72,32 @@ class _WalletEditView extends State<WalletEditView> {
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
+                    return 'Please enter a wallet name';
                   }
                   return null;
                 },
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
-                child: TextFormField(
+              const SizedBox(height: 20),
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: 'Portfolio Name',
+                ),
+              ),
+              const SizedBox(height: 20),
+            ],
+          ),
+
+          /*child: Padding(
+            padding: const EdgeInsets.only(
+              left: Themes.paddingMainLeft,
+              right: Themes.paddingMainRight,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                TextFormField(
                   decoration: const InputDecoration(
-                    hintText: 'Enter Coin Name',
+                    hintText: 'Wallet Name',
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -90,45 +106,75 @@ class _WalletEditView extends State<WalletEditView> {
                     return null;
                   },
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
-                child: DropdownButtonFormField(
-                  decoration: const InputDecoration(
-                    hintText: 'Where to get data',
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
+                  child: TextField(
+                    mouseCursor: SystemMouseCursors.click,
+                    enableInteractiveSelection: false,
+                    onTap: () => {print('...')},
+                    readOnly: true,
+                    showCursor: false,
+                    decoration: const InputDecoration(
+                      hintText: 'Enter Coin Name',
+                      suffixIcon: Icon(Icons.arrow_drop_down),
+                    ),
+                    /*validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      return null;
+                    }*/
                   ),
-                  items: <String>[
-                    'Coingecko',
-                    'Tinyman',
-                  ].map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (String? newValue) {},
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
-                child: DropdownButtonFormField(
-                  decoration: const InputDecoration(
-                    hintText: 'Coin',
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
+                  child: DropdownButtonFormField(
+                    decoration: const InputDecoration(
+                      hintText: 'Where to get data',
+                    ),
+                    items: <String>[
+                      'Coingecko',
+                      'Tinyman',
+                    ].map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {},
                   ),
-                  items: <String>[
-                    'Bitcoin',
-                    'Algorand',
-                  ].map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (String? newValue) {},
                 ),
-              ),
-            ],
-          ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
+                  child: DropdownButtonHideUnderline(
+                    child: ButtonTheme(
+                      alignedDropdown: true,
+                      child: DropdownButtonFormField(
+                        borderRadius: BorderRadius.circular(10.0),
+                        isExpanded: true,
+                        decoration: const InputDecoration(
+                          hintText: 'Coin',
+                        ),
+                        items: <String>[
+                          'Bitcoin',
+                          'Algorand',
+                        ].map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {},
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),*/
         ),
       ),
     );

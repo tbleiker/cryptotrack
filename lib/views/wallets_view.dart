@@ -55,6 +55,7 @@ class _WalletsView extends State<WalletsView> {
   @override
   Widget build(BuildContext context) {
     return MainBody(
+      // app bar
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.wallets_title),
         actions: <Widget>[
@@ -63,9 +64,11 @@ class _WalletsView extends State<WalletsView> {
           ),
         ],
       ),
+
+      // body
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: [
+        children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(
               top: Themes.paddingMainTop,
